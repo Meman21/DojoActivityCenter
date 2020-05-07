@@ -1,0 +1,15 @@
+using System;
+using Microsoft.EntityFrameworkCore;
+namespace DojoActivityCenter.Models
+{
+    public class Context : DbContext
+    {
+        // base() calls the parent class' constructor passing the "options" parameter along
+        public Context(DbContextOptions<Context> options) : base(options) { }
+
+    public DbSet<User> User {get; set;}
+    public DbSet<Activity> Activity {get; set;}
+    public DbSet<UserActivity> UserActivity {get; set;}
+
+    }
+}
